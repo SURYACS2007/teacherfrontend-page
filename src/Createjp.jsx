@@ -1,0 +1,94 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import studentData from './data/students.json';
+import './CreateStudent.css';
+
+function Createjp() {
+  const [rows, setRows] = useState(
+    studentData.map((student) => ({
+      ...student,
+      jp: ''
+    }))
+  );
+
+  const handleChange = (index, value) => {
+    const updatedRows = [...rows];
+    updatedRows[index].jp = value;
+    setRows(updatedRows);
+  };
+
+  const handleSubmit = async (index) => {
+    const student = rows[index];
+    const { roll, jp } = student;
+
+    if (!jp) {
+      alert('Please enter JP mark.');
+      return;
+    }
+
+    try {
+      const response = await axios.post('https://teachers-page.onrender.com/createjp', {
+        roll,
+        jp
+      });
+
+      if (response.data.message === 'JP mark stored successfully') {
+        alert(`✅ JP mark submitted for Roll: ${roll}`);
+
+        // Clear JP field for this student
+        const updatedRows = [...rows];
+        updatedRows[index].jp = '';
+        setRows(updatedRows);
+      }
+    } catch (error) {
+      console.error('Error:', error.response?.data || error.message);
+      if (error.response?.status === 404) {
+        alert(`❌ Roll number ${roll} not found in database`);
+      } else {
+        alert('❌ Submission failed. Please try again.');
+      }
+    }
+  };
+
+  return (
+    <div className="container mt-5">
+      <h2>Enter Students&apos; JP Marks</h2>
+      <table className="table table-bordered mt-4">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Roll</th>
+            <th>JP</th>
+            <th>Submit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((student, index) => (
+            <tr key={index}>
+              <td>{student.name}</td>
+              <td>{student.roll}</td>
+              <td>
+                <input
+                  type="number"
+                  className="form-control"
+                  value={student.jp}
+                  onChange={(e) => handleChange(index, e.target.value)}
+                />
+              </td>
+              <td>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => handleSubmit(index)}
+                >
+                  Submit
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default Createjp;

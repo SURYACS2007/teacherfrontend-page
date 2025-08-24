@@ -1,0 +1,114 @@
+/* Container styling */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9faff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.container h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  color: #1a237e; /* Deep navy blue */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Equal width columns */
+  overflow-x: auto;
+}
+
+/* Fixed header on scroll (optional) */
+thead th {
+  position: sticky;
+  top: 0;
+  background: #1a237e;
+  color: white;
+  padding: 14px 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid #3949ab;
+  user-select: none;
+  z-index: 10;
+}
+
+/* Table cells */
+tbody td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+  color: #263238;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+/* Row hover effect */
+tbody tr:hover {
+  background-color: #e8eaf6;
+  transition: background-color 0.2s ease;
+}
+
+/* Input fields */
+input[type='number'] {
+  width: 80px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1.8px solid #90caf9;
+  font-size: 1rem;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+/* Input focus */
+input[type='number']:focus {
+  outline: none;
+  border-color: #1a237e;
+  box-shadow: 0 0 5px #1a237e;
+}
+
+/* Submit button */
+button.btn-primary {
+  background-color: #3949ab;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+/* Button hover */
+button.btn-primary:hover {
+  background-color: #1a237e;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  input[type='number'] {
+    width: 60px;
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+
+  button.btn-primary {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  thead th, tbody td {
+    padding: 8px 6px;
+    font-size: 0.85rem;
+  }
+}

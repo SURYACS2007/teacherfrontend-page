@@ -1,0 +1,208 @@
+/* Body and html full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body with soft blue gradient background */
+/* Apply full viewport width & no margin on root container */
+.body {
+  width: 100vw;       /* full viewport width */
+  min-height: 100vh;  /* full viewport height */
+  margin: 0;
+  padding-top: 80px;  /* space for fixed header */
+  background: linear-gradient(135deg, #015590 0%, #005397 100%);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Container centers content but increased max width */
+.student-container {
+  width: 100%;
+  max-width: 1100px; /* increased from 900px */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card styling */
+.student-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  overflow-x: auto; /* allow horizontal scroll if needed */
+}
+
+/* Table styles */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  table-layout: fixed; /* fix column widths */
+}
+
+.student-table th,
+.student-table td {
+  padding: 14px 12px;
+  border: 1px solid #cfd8dc; /* lighter gray border */
+  text-align: center;
+  font-size: 15px;
+  color: #263238; /* dark slate */
+  white-space: nowrap;
+}
+
+/* Fix width for last column (actions) */
+.student-table th:last-child,
+.student-table td:last-child {
+  width: 160px; /* wider to fit both buttons */
+  white-space: nowrap;
+  padding: 12px 8px;
+}
+
+/* Actions cell flex container */
+.student-table td:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* space between buttons */
+  padding: 10px 8px;
+}
+
+/* Table header */
+.student-table th {
+  background-color: #e8eaf6; /* very light indigo */
+  font-weight: 700;
+  color: #1a237e; /* navy */
+}
+
+/* Buttons */
+.btn-add {
+  align-self: flex-start;
+  background-color: #3949ab; /* indigo */
+  color: white;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.btn-add:hover {
+  background-color: #303f9f; /* darker indigo */
+}
+
+.btn-update {
+  background-color: #1e88e5; /* bright blue */
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  min-width: 60px;
+  text-align: center;
+}
+
+.btn-update:hover {
+  background-color: #1565c0; /* darker blue */
+}
+
+.btn-delete {
+  background-color: #e53935; /* red */
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  min-width: 60px;
+  text-align: center;
+}
+
+.btn-delete:hover {
+  background-color: #b71c1c; /* darker red */
+}
+
+.btn-delete-all {
+  margin-top: 10px;
+  background-color: #d32f2f; /* red */
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 14px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.btn-delete-all:hover {
+  background-color: #9a0007; /* darker red */
+}
+
+/* Header with deep navy blue */
+ 
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .student-card {
+    padding: 20px 15px;
+    overflow-x: auto; /* horizontal scroll if needed */
+  }
+
+  .student-table {
+    min-width: 600px;
+  }
+
+  .student-table th,
+  .student-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .student-table th:last-child,
+  .student-table td:last-child {
+    width: 140px;
+    padding: 6px 5px;
+  }
+
+  .student-table td:last-child {
+    gap: 6px;
+  }
+
+  .btn-add {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .btn-update,
+  .btn-delete {
+    padding: 5px 8px;
+    font-size: 12px;
+    min-width: 50px;
+  }
+
+  .btn-delete-all {
+    padding: 12px 0;
+    font-size: 16px;
+  }
+}
