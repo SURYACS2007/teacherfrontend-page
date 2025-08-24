@@ -12,7 +12,7 @@ function Student() {
 
   const fetchStudents = () => {
     axios
-      .get('https://teachers-page.onrender.com/')
+      .get('https://teacherbackend-page.onrender.com/')
       .then(res => setStudents(res.data))
       .catch(err => console.error(err));
   };
@@ -20,7 +20,7 @@ function Student() {
   const handleDelete = (roll) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       axios
-        .delete(`https://teachers-page.onrender.com/delete/${roll}`)
+        .delete(`https://teacherbackend-page.onrender.com/delete/${roll}`)
         .then(() => {
           setStudents(students.filter(student => student.ROLL !== roll));
         })
@@ -31,7 +31,7 @@ function Student() {
   const handleDeleteAll = () => {
     if (window.confirm('Are you sure you want to delete ALL students?')) {
       axios
-        .delete('https://teachers-page.onrender.com/delete-all')
+        .delete('https://teacherbackend-page.onrender.com/delete-all')
         .then(() => {
           setStudents([]);
         })

@@ -31,7 +31,7 @@ function CreateStudent() {
     }
 
     try {
-      const response = await axios.post('https://teachers-page.onrender.com/create', {
+      const response = await axios.post('https://teacherbackend-page.onrender.com/create', {
         name,
         roll,
         jp: jp || '',

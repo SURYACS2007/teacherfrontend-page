@@ -12,7 +12,7 @@ function Jpstudent() {
 
   const fetchStudents = () => {
     axios
-      .get('https://teachers-page.onrender.com/jpstudent')
+      .get('https://teacherbackend-page.onrender.com/jpstudent')
       .then(res => setStudents(res.data))
       .catch(err => console.error(err));
   };
@@ -20,7 +20,7 @@ function Jpstudent() {
   const handleDelete = (roll) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       axios
-        .delete(`https://teachers-page.onrender.com/deletejp/${roll}`)
+        .delete(`https://teacherbackend-page.onrender.com/deletejp/${roll}`)
         .then(() => {
           setStudents(students.filter(student => student.ROLL !== roll));
         })
@@ -31,7 +31,7 @@ function Jpstudent() {
   const handleDeleteAll = () => {
     if (window.confirm('Are you sure you want to delete ALL students?')) {
       axios
-        .delete('https://teachers-page.onrender.com/delete-alljp')
+        .delete('https://teacherbackend-page.onrender.com/delete-alljp')
         .then(() => setStudents([]))
         .catch(err => console.error(err));
     }

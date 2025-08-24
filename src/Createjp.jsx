@@ -27,7 +27,7 @@ function Createjp() {
     }
 
     try {
-      const response = await axios.post('https://teachers-page.onrender.com/createjp', {
+      const response = await axios.post('https://teacherbackend-page.onrender.com/createjp', {
         roll,
         jp
       });
