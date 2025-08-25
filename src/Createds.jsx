@@ -32,7 +32,7 @@ function Createds() {
         ds
       });
 
-      if (response.data.message === 'Ds mark stored successfully') {
+      if (response.message === 'Ds mark stored successfully') {
         alert(`✅ DS mark submitted for Roll: ${roll}`);
 
         const updatedRows = [...rows];
