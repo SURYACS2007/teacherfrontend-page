@@ -6,6 +6,9 @@ import CreateStudent from './CreateStudent';
 // Subject teacher mark entry pages
 import Jpstudent from './Jpstudent';
 import Createjp from './Createjp';
+import Dsstudent from './Dsstudent';
+import Createds from './Createds';
+
 
 function App() {
   return (
@@ -19,6 +22,8 @@ function App() {
         <Route path="/create" element={<CreateStudent />} />
         <Route path="/jpstudent" element={<Jpstudent/>} />
         <Route path="/createjp" element={<Createjp/>} />
+        <Route path="/dsstudent" element={<Dsstudent/>} />
+        <Route path="/createds" element={<Createds/>} />
 
 
 
