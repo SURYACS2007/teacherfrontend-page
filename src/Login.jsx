@@ -10,7 +10,8 @@ function Login() {
   // Hardcoded credentials
   const validCredentials = {
     staff: 'staff123',
-    jpp: 'jpp123'
+    jpp: 'jpp123',
+    dss:'dss123'
   };
 
   const handleSubmit = (e) => {
@@ -25,6 +26,8 @@ function Login() {
           navigate('/students');
         } else if (lowerUsername === 'jpp') {
           navigate('/jpstudent');
+        } else if (lowerUsername === 'dss') {
+          navigate('/dsstudent');
         }
       } else {
         alert('Incorrect password.');
