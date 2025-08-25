@@ -32,12 +32,15 @@ function Createds() {
         ds
       });
 
-      if (response.message === 'Ds mark stored successfully') {
-        alert(`✅ DS mark submitted for Roll: ${roll}`);
+      if (response.status === 200) {
+        console.log(" the in ", response)
+        alert(response.data.message);
 
         const updatedRows = [...rows];
         updatedRows[index].ds = '';
         setRows(updatedRows);
+      }else{
+        alert(response.data.message)
       }
     } catch (error) {
       console.error('Error:', error.response?.data || error.message);
