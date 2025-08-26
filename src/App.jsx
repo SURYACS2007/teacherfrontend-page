@@ -8,6 +8,8 @@ import Jpstudent from './Jpstudent';
 import Createjp from './Createjp';
 import Dsstudent from './Dsstudent';
 import Createds from './Createds';
+import Vccfstudent from './Vccffstudent';
+import Createvccf from './Createvccf';
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
         <Route path="/createjp" element={<Createjp/>} />
         <Route path="/dsstudent" element={<Dsstudent/>} />
         <Route path="/createds" element={<Createds/>} />
+        <Route path="/vccfstudent" element={<Vccfstudent/>} />
+        <Route path="/createvccf" element={<Createvccf/>} />
 
 
 

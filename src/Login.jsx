@@ -11,7 +11,8 @@ function Login() {
   const validCredentials = {
     staff: 'staff123',
     jpp: 'jpp123',
-    dss:'dss123'
+    dss:'dss123',
+    vccff:'vccff123'
   };
 
   const handleSubmit = (e) => {
@@ -28,6 +29,8 @@ function Login() {
           navigate('/jpstudent');
         } else if (lowerUsername === 'dss') {
           navigate('/dsstudent');
+        }else if (lowerUsername === 'vccff123') {
+          navigate('/vccfstudent');
         }
       } else {
         alert('Incorrect password.');
