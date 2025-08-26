@@ -56,7 +56,7 @@ function Login() {
         {/* 📢 Upcoming Result Notice */}
         <div className="notice">
           📢 Upcoming Results will be published on 
-          <span className="date"> 30th August 2025</span>
+          <span className="date"> 30th August 2025 At 9 AM</span>
         </div>
 
         <h2 className="login-title">Login</h2>
