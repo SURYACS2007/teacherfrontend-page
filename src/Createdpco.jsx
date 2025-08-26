@@ -22,18 +22,19 @@ function Createdpco() {
     const { roll, dpco } = student;
 
     if (!dpco) {
-      alert('Please enter dpco mark.');
+      alert('Please enter DPCO mark.');
       return;
     }
 
     try {
-      const response = await axios.post('https://teacherbackend-page.onrender.com/createdpco', {
-        roll,
-        dpco
-      });
+      const response = await axios.post(
+        'https://teacherbackend-page.onrender.com/createdpco',
+        { roll, dpco }
+      );
 
-      if (response.data.message === 'VCCD mark stored successfully') {
-        alert(`✅ DPCO mark submitted for Roll: ${roll}`);
+      // ✅ Show backend response dynamically
+      if (response.data.message) {
+        alert(`✅ ${response.data.message} (Roll: ${roll})`);
 
         const updatedRows = [...rows];
         updatedRows[index].dpco = '';
@@ -41,6 +42,7 @@ function Createdpco() {
       }
     } catch (error) {
       console.error('Error:', error.response?.data || error.message);
+
       if (error.response?.status === 404) {
         alert(`❌ Roll number ${roll} not found in database`);
       } else {
