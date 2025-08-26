@@ -31,12 +31,11 @@ function Login() {
           navigate('/jpstudent');
         } else if (lowerUsername === 'dss') {
           navigate('/dsstudent');
-        }else if (lowerUsername === 'vccff') {
+        } else if (lowerUsername === 'vccff') {
           navigate('/vccfstudent');
-        }else if (lowerUsername === 'daaa') {
+        } else if (lowerUsername === 'daaa') {
           navigate('/daastudent');
-        }
-        else if (lowerUsername === 'dpcoo') {
+        } else if (lowerUsername === 'dpcoo') {
           navigate('/dpcostudent');
         }
       } else {
@@ -51,8 +50,15 @@ function Login() {
     <div className="login-body">
       <div className="login-card">
         <header className="header">
-          DHIRAJLAL GANDHI COLLEGE OF TECHNOLOGY 1
+          DHIRAJLAL GANDHI COLLEGE OF TECHNOLOGY
         </header>
+
+        {/* 📢 Upcoming Result Notice */}
+        <div className="notice">
+          📢 Upcoming Results will be published on 
+          <span className="date"> 30th August 2025</span>
+        </div>
+
         <h2 className="login-title">Login</h2>
         <form onSubmit={handleSubmit} className="login-form">
           <label htmlFor="username">Username</label>
