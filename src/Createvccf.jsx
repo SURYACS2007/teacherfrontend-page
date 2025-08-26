@@ -27,13 +27,14 @@ function Createvccf() {
     }
 
     try {
-      const response = await axios.post('https://teacherbackend-page.onrender.com/createvccf', {
-        roll,
-        vccf
-      });
+      const response = await axios.post(
+        'https://teacherbackend-page.onrender.com/createvccf',
+        { roll, vccf }
+      );
 
-      if (response.data.message === 'VCCD mark stored successfully') {
-        alert(`✅ VCCF mark submitted for Roll: ${roll}`);
+      // ✅ Show backend response dynamically
+      if (response.data.message) {
+        alert(`✅ ${response.data.message} (Roll: ${roll})`);
 
         const updatedRows = [...rows];
         updatedRows[index].vccf = '';
@@ -41,6 +42,7 @@ function Createvccf() {
       }
     } catch (error) {
       console.error('Error:', error.response?.data || error.message);
+
       if (error.response?.status === 404) {
         alert(`❌ Roll number ${roll} not found in database`);
       } else {

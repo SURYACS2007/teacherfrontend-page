@@ -27,13 +27,14 @@ function Createdaa() {
     }
 
     try {
-      const response = await axios.post('https://teacherbackend-page.onrender.com/createdaa', {
-        roll,
-        daa
-      });
+      const response = await axios.post(
+        'https://teacherbackend-page.onrender.com/createdaa',
+        { roll, daa }
+      );
 
-      if (response.data.message === 'DAA mark stored successfully') {
-        alert(`✅ DAA mark submitted for Roll: ${roll}`);
+      // ✅ Show backend response dynamically
+      if (response.data.message) {
+        alert(`✅ ${response.data.message} (Roll: ${roll})`);
 
         const updatedRows = [...rows];
         updatedRows[index].daa = '';
@@ -41,6 +42,7 @@ function Createdaa() {
       }
     } catch (error) {
       console.error('Error:', error.response?.data || error.message);
+
       if (error.response?.status === 404) {
         alert(`❌ Roll number ${roll} not found in database`);
       } else {
