@@ -45,6 +45,10 @@ function Jpstudent() {
     }
   };
 
+
+
+  
+
   return (
     <div className='body'>
       <header className="header">DHIRAJLAL GANDHI COLLEGE OF TECHNOLOGY</header>
