@@ -10,6 +10,8 @@ import Dsstudent from './Dsstudent';
 import Createds from './Createds';
 import Vccfstudent from './Vccffstudent';
 import Createvccf from './Createvccf';
+import Daastudent from './Daastudent';
+import Createdaa from './Createdaa';
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Route path="/createds" element={<Createds/>} />
         <Route path="/vccfstudent" element={<Vccfstudent/>} />
         <Route path="/createvccf" element={<Createvccf/>} />
+        <Route path="/daastudent" element={<Daastudent/>} />
+        <Route path="/createdaa" element={<Createdaa/>} />
 
 
 

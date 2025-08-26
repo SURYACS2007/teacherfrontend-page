@@ -12,7 +12,8 @@ function Login() {
     staff: 'staff123',
     jpp: 'jpp123',
     dss:'dss123',
-    vccff:'vccff123'
+    vccff:'vccff123',
+    daaa:'daaa123'
   };
 
   const handleSubmit = (e) => {
@@ -31,6 +32,8 @@ function Login() {
           navigate('/dsstudent');
         }else if (lowerUsername === 'vccff') {
           navigate('/vccfstudent');
+        }else if (lowerUsername === 'daaa') {
+          navigate('/daastudent');
         }
       } else {
         alert('Incorrect password.');
