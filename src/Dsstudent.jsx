@@ -18,11 +18,14 @@ function Dsstudent() {
   };
 
   const handleDelete = (roll) => {
-    if (window.confirm('Are you sure you want to delete this student?')) {
+    if (window.confirm('Are you sure you want to delete this student DS mark?')) {
       axios
         .delete(`https://teacherbackend-page.onrender.com/deleteds/${roll}`)
         .then(() => {
-          setStudents(students.filter(student => student.ROLL !== roll));
+          // Update only JP field for that student
+          setStudents(students.map(student =>
+            student.ROLL === roll ? { ...student, DS: null } : student
+          ));
         })
         .catch(err => console.error(err));
     }
@@ -58,7 +61,7 @@ function Dsstudent() {
                   <tr key={i}>
                     <td>{student.NAME}</td>
                     <td>{student.ROLL}</td>
-                    <td>{student.DS}</td>
+                    <td>{student.DS !== null ? student.DS : "--"}</td>
                     <td className="actions-cell">
                       <button className="btn-delete" onClick={() => handleDelete(student.ROLL)}>Delete</button>
                     </td>
