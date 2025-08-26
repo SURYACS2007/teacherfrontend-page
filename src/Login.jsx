@@ -29,7 +29,7 @@ function Login() {
           navigate('/jpstudent');
         } else if (lowerUsername === 'dss') {
           navigate('/dsstudent');
-        }else if (lowerUsername === 'vccff123') {
+        }else if (lowerUsername === 'vccff') {
           navigate('/vccfstudent');
         }
       } else {
