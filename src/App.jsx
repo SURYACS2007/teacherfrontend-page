@@ -12,6 +12,8 @@ import Vccfstudent from './Vccffstudent';
 import Createvccf from './Createvccf';
 import Daastudent from './Daastudent';
 import Createdaa from './Createdaa';
+import Createdpco from './Createdpco';
+import Dpcostudent from './Dpcostudent';
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
         <Route path="/createvccf" element={<Createvccf/>} />
         <Route path="/daastudent" element={<Daastudent/>} />
         <Route path="/createdaa" element={<Createdaa/>} />
+        <Route path="/dpcostudent" element={<Dpcostudent/>} />
+        <Route path="/createdpco" element={<Createdpco/>} />
 
 
 
