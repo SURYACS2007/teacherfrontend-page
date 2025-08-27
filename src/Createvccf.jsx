@@ -32,7 +32,6 @@ function Createvccf() {
         { roll, vccf }
       );
 
-      // ✅ Show backend response dynamically
       if (response.data.message) {
         alert(`✅ ${response.data.message} (Roll: ${roll})`);
 

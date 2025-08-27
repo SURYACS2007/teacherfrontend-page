@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // your existing CSS file
+import './Login.css'; 
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -20,7 +20,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const lowerUsername = username.toLowerCase(); // Make username case-insensitive
+    const lowerUsername = username.toLowerCase();
 
     if (validCredentials[lowerUsername]) {
       if (validCredentials[lowerUsername] === password) {
@@ -53,7 +53,6 @@ function Login() {
           DHIRAJLAL GANDHI COLLEGE OF TECHNOLOGY
         </header>
 
-        {/* 📢 Upcoming Result Notice */}
 
 
         <h2 className="login-title">Login</h2>

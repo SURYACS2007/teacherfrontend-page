@@ -22,7 +22,7 @@ function Dpcostudent() {
       axios
         .delete(`https://teacherbackend-page.onrender.com/deletedpco/${roll}`)
         .then(() => {
-          // Update only JP field for that student
+          
           setStudents(students.map(student =>
             student.ROLL === roll ? { ...student, DPCO: null } : student
           ));

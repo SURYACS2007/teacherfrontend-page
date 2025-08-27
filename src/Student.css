@@ -1,36 +1,31 @@
-/* Body and html full height */
 html, body {
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body with soft blue gradient background */
-/* Apply full viewport width & no margin on root container */
 .body {
-  width: 100vw;       /* full viewport width */
-  min-height: 100vh;  /* full viewport height */
+  width: 100vw;
+  min-height: 100vh;
   margin: 0;
-  padding-top: 80px;  /* space for fixed header */
+  padding-top: 80px;
   background: linear-gradient(135deg, #015590 0%, #005397 100%);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden; /* prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
-/* Container centers content but increased max width */
 .student-container {
   width: 100%;
-  max-width: 1100px; /* increased from 900px */
+  max-width: 1100px;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
 }
 
-/* Card styling */
 .student-card {
   background-color: #ffffff;
   width: 100%;
@@ -42,54 +37,49 @@ html, body {
   flex-direction: column;
   gap: 20px;
   box-sizing: border-box;
-  overflow-x: auto; /* allow horizontal scroll if needed */
+  overflow-x: auto;
 }
 
-/* Table styles */
 .student-table {
   width: 100%;
   border-collapse: collapse;
   min-width: 700px;
-  table-layout: fixed; /* fix column widths */
+  table-layout: fixed;
 }
 
 .student-table th,
 .student-table td {
   padding: 14px 12px;
-  border: 1px solid #cfd8dc; /* lighter gray border */
+  border: 1px solid #cfd8dc;
   text-align: center;
   font-size: 15px;
-  color: #263238; /* dark slate */
+  color: #263238;
   white-space: nowrap;
 }
 
-/* Fix width for last column (actions) */
 .student-table th:last-child,
 .student-table td:last-child {
-  width: 160px; /* wider to fit both buttons */
+  width: 160px;
   white-space: nowrap;
   padding: 12px 8px;
 }
 
-/* Actions cell flex container */
 .student-table td:last-child {
   display: flex;
   justify-content: center;
-  gap: 10px; /* space between buttons */
+  gap: 10px;
   padding: 10px 8px;
 }
 
-/* Table header */
 .student-table th {
-  background-color: #e8eaf6; /* very light indigo */
+  background-color: #e8eaf6;
   font-weight: 700;
-  color: #1a237e; /* navy */
+  color: #1a237e;
 }
 
-/* Buttons */
 .btn-add {
   align-self: flex-start;
-  background-color: #3949ab; /* indigo */
+  background-color: #3949ab;
   color: white;
   font-weight: 600;
   padding: 12px 22px;
@@ -101,11 +91,11 @@ html, body {
 }
 
 .btn-add:hover {
-  background-color: #303f9f; /* darker indigo */
+  background-color: #303f9f;
 }
 
 .btn-update {
-  background-color: #1e88e5; /* bright blue */
+  background-color: #1e88e5;
   border: none;
   color: white;
   padding: 6px 12px;
@@ -120,11 +110,11 @@ html, body {
 }
 
 .btn-update:hover {
-  background-color: #1565c0; /* darker blue */
+  background-color: #1565c0;
 }
 
 .btn-delete {
-  background-color: #e53935; /* red */
+  background-color: #e53935;
   border: none;
   color: white;
   padding: 6px 12px;
@@ -139,12 +129,12 @@ html, body {
 }
 
 .btn-delete:hover {
-  background-color: #b71c1c; /* darker red */
+  background-color: #b71c1c;
 }
 
 .btn-delete-all {
   margin-top: 10px;
-  background-color: #d32f2f; /* red */
+  background-color: #d32f2f;
   border: none;
   color: white;
   font-weight: 700;
@@ -156,17 +146,13 @@ html, body {
 }
 
 .btn-delete-all:hover {
-  background-color: #9a0007; /* darker red */
+  background-color: #9a0007;
 }
 
-/* Header with deep navy blue */
- 
-
-/* Responsive for mobile */
 @media (max-width: 600px) {
   .student-card {
     padding: 20px 15px;
-    overflow-x: auto; /* horizontal scroll if needed */
+    overflow-x: auto;
   }
 
   .student-table {

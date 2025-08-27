@@ -22,7 +22,7 @@ function Daastudent() {
       axios
         .delete(`https://teacherbackend-page.onrender.com/deletedaa/${roll}`)
         .then(() => {
-          // Update only JP field for that student
+         
           setStudents(students.map(student =>
             student.ROLL === roll ? { ...student, DAA: null } : student
           ));

@@ -22,7 +22,7 @@ function Dsstudent() {
       axios
         .delete(`https://teacherbackend-page.onrender.com/deleteds/${roll}`)
         .then(() => {
-          // Update only JP field for that student
+          
           setStudents(students.map(student =>
             student.ROLL === roll ? { ...student, DS: null } : student
           ));

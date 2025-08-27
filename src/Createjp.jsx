@@ -35,7 +35,6 @@ function Createjp() {
       if (response.data.message === 'JP mark stored successfully') {
         alert(`✅ JP mark submitted for Roll: ${roll}`);
 
-        // Clear JP field for this student
         const updatedRows = [...rows];
         updatedRows[index].jp = '';
         setRows(updatedRows);

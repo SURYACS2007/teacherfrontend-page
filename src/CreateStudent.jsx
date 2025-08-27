@@ -44,7 +44,6 @@ function CreateStudent() {
       if (response.data.message === 'Success') {
         alert("Successfully submitted marks for ${name}");
         
-        // Clear the form for this student
         const updatedRows = [...rows];
         updatedRows[index] = {
           ...updatedRows[index],
