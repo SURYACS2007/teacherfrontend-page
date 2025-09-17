@@ -1,4 +1,4 @@
-// main.jsx or App.jsx
+// App.jsx or main.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -13,9 +13,14 @@ import Vccfstudent from "./Vccfstudent";
 import Createvccf from "./Createvccf";
 import Daastudent from "./Daastudent";
 
+// Optional 404 page
+function NotFound() {
+  return <h1>404 - Page Not Found</h1>;
+}
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> {/* No basename needed unless deployed in subfolder */}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/student" element={<Student />} />
@@ -27,6 +32,8 @@ function App() {
         <Route path="/vccfstudent" element={<Vccfstudent />} />
         <Route path="/createvccf" element={<Createvccf />} />
         <Route path="/daastudent" element={<Daastudent />} />
+        {/* Catch-all 404 route */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
