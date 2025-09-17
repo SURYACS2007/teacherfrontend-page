@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 import Login from './Login';
 import Student from './Student';
 import CreateStudent from './CreateStudent';
@@ -36,6 +36,7 @@ function App() {
         <Route path="/createdaa" element={<Createdaa/>} />
         <Route path="/dpcostudent" element={<Dpcostudent/>} />
         <Route path="/createdpco" element={<Createdpco/>} />
+        <Router basename='tothepoint_login'/>
 
 
 
