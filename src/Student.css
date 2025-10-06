@@ -16,6 +16,19 @@ html, body {
   align-items: center;
   overflow-x: hidden;
 }
+.btn-export {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-export:hover {
+  background-color: #218838;
+}
 
 .student-container {
   width: 100%;

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import * as XLSX from 'xlsx'; // ✅ NEW
+import { saveAs } from 'file-saver'; // ✅ NEW
 import './Student.css';
 
 function Student() {
@@ -37,6 +39,21 @@ function Student() {
         })
         .catch(err => console.error(err));
     }
+  };
+
+  // ✅ Export to Excel
+  const handleExportToExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(students);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Students");
+
+    const excelBuffer = XLSX.write(workbook, {
+      bookType: 'xlsx',
+      type: 'array'
+    });
+
+    const file = new Blob([excelBuffer], { type: 'application/octet-stream' });
+    saveAs(file, 'studentsmark.xlsx');
   };
 
   return (
@@ -88,6 +105,11 @@ function Student() {
               </tbody>
             </table>
           </div>
+
+          {/* ✅ Export Button */}
+          <button className="btn-export" onClick={handleExportToExcel}>
+            Export to Excel
+          </button>
 
           <button className="btn-delete-all" onClick={handleDeleteAll}>
             Delete all
